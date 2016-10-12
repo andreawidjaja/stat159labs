@@ -18,6 +18,8 @@ test_that("range works as expected for vectors with NA", {
 
 	expect_length(range_value(y), 1)
         expect_equal(range_value(y), NA_real_)
+	expect_equal(range_value(y, TRUE), 3)
+
 })
 
 
@@ -32,7 +34,7 @@ test_that("range works as expected for vectors with T/F", {
 test_that("range works as expected for vectors with Letters", {
         w <- letters[1:5]
 
-        expect_error(range_value(w), throws_error())
+        expect_error(range_value(w))
 })
 
 
@@ -68,19 +70,19 @@ source("../functions/center-measurers.R")
 context("Test for Center Measures")
 test_that("center measures works as expected", {
 	x <- c(1, 2, 3, 4)
-	expect_equal(center-measures(x), c(5, 5))
-	expect_length(center-measures(x), 2)
+	expect_equal(center_measures(x), c(2.5, 2.5))
+	expect_length(center_measures(x), 2)
 })
 
 
 #Spread Measures
 source("../functions/spread-measures.R")
 
-context("Test for spread measures") 
-test_that("center measures works as expected", {
+context("Test for Spread Measures") 
+test_that("spread measures works as expected", {
 	x <- c(1, 2, 3, 4)
-	expect_equal(spread-measures(x), c(1, 4, 1.5, 1.290994))
-	expect_length(spread-measures(x), 3)
+	expect_equal(spread_measures(x), c(14, 1.5, 1.290994))
+	expect_length(spread_measures(x), 4)
 })
 
 
@@ -90,6 +92,6 @@ source("../functions/descriptive-stats.R")
 context("Test for Descriptive Stats") 
 test_that("descriptive stats works as expected", {
 	x <- c(1, 2, 3, 4)
-	expect_equal(descriptive-stats(x), c(2, 2, 2, 1, 0, 2, 0))
-	expect_length(descriptive-stats(x), 10)
+	expect_equal(descriptive_stats(x), c(2.5, 2.5, 14, 1.5, 1.290994, 0))
+	expect_length(descriptive_stats(x), 6)
 })
