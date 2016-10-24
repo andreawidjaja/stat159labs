@@ -14,7 +14,7 @@ The files in this branch will contain "Advertising.csv" and the shiny app called
 To reproduce, simply fork or download the contents. Then, run the app.R file in Rstudio and click "Run App" on the top right corner.
 
 ##Author
-Name: Andrea Widjaja
+Name: Andrea Widjaja  
 Contact: andrea.widjaja@berkeley.edu  
 
 
